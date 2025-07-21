@@ -8,9 +8,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 const viewabilityConfig: ViewabilityConfig = {
   id: "feed",
-  itemVisiblePercentThreshold: 50,
-  viewAreaCoveragePercentThreshold: 50,
-  minimumViewTime: 250,
+  itemVisiblePercentThreshold: 80,
 };
 
 export default function HomeScreen() {
