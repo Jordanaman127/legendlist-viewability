@@ -3,7 +3,7 @@ import { dummyData } from "@/lib/dummy-list-data";
 import { LegendList, useViewability, ViewabilityConfig } from "@legendapp/list";
 import { ResizeMode, Video } from "expo-av";
 import { Image } from "expo-image";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const viewabilityConfig: ViewabilityConfig = {
@@ -19,7 +19,7 @@ export default function HomeScreen() {
         recycleItems
         viewabilityConfig={viewabilityConfig}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={Item}
+        renderItem={Post}
       />
     </View>
   );
@@ -42,6 +42,7 @@ function Item({ item }: { item: ItemType }) {
     </View>
   );
 }
+const Post = memo(Item);
 
 function Media({
   url,
